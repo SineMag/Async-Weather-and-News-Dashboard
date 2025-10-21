@@ -1,35 +1,56 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from 'react';
+import './App.css';
+import { fetchWeatherAndNewsCallbacks } from './callbackVersion';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [weather, setWeather] = useState<any>(null);
+  const [news, setNews] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetchWeatherAndNewsCallbacks((err, data) => {
+      if (err) {
+        setError(err.message);
+        setLoading(false);
+        return;
+      }
+      if (data) {
+        setWeather(data.weather);
+        setNews(data.news);
+      }
+      setLoading(false);
+    });
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="App">
+      <h1>Asynchronous Dashboard</h1>
+      {loading && <p>Loading...</p>}
+      {error && <p>Error: {error}</p>}
+      <div className="data-container">
+        <div className="weather-container">
+          <h2>Weather</h2>
+          {weather && (
+            <div>
+              <p>Temperature: {weather.current_weather.temperature}°C</p>
+              <p>Windspeed: {weather.current_weather.windspeed} km/h</p>
+            </div>
+          )}
+        </div>
+        <div className="news-container">
+          <h2>News</h2>
+          {news && (
+            <ul>
+              {news.posts.slice(0, 5).map((post: any) => (
+                <li key={post.id}>{post.title}</li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
