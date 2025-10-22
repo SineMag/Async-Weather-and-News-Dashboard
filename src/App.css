@@ -1,13 +1,251 @@
-/* Global styles for the App component */
+/* Global styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
-
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html, body, #root {
   height: 100%;
   width: 100%;
+  background: linear-gradient(135deg, #e0f7ff 0%, #ffffff 50%, #87ceeb 100%);
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #1a1a1a;
+}
+
+.App h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #0077b6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* Controls Section */
+.controls {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 119, 182, 0.15);
+  border: 1px solid rgba(135, 206, 235, 0.3);
+}
+
+.controls h3 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #0077b6;
+}
+
+.button-group {
+  margin-bottom: 1.5rem;
+}
+
+.button-group h4 {
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #023e8a;
+}
+
+.button-group button {
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  padding: 0.8rem 1.5rem;
+  background: #ffffff;
+  border: 2px solid #87ceeb;
+  border-radius: 8px;
+  color: #0077b6;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.button-group button:hover:not(:disabled) {
+  background: #87ceeb;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 119, 182, 0.3);
+}
+
+.button-group button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Status Section */
+.status {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  border: 1px solid rgba(135, 206, 235, 0.3);
+}
+
+.status p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+}
+
+.loading {
+  color: #0077b6;
+  font-weight: bold;
+  animation: pulse 1.5s infinite;
+}
+
+.error {
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Data Container */
+.data-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .data-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.weather-container,
+.news-container {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 119, 182, 0.15);
+  border: 1px solid rgba(135, 206, 235, 0.3);
+}
+
+.weather-container h2,
+.news-container h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #87ceeb;
+  padding-bottom: 0.5rem;
+  color: #0077b6;
+}
+
+.weather-container p,
+.news-container p {
+  margin: 0.8rem 0;
+  line-height: 1.6;
+  color: #1a1a1a;
+}
+
+.placeholder {
+  color: #666;
+  font-style: italic;
+}
+
+.news-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.news-container li {
+  background: rgba(135, 206, 235, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: transform 0.2s;
+  border: 1px solid rgba(135, 206, 235, 0.2);
+}
+
+.news-container li:hover {
+  transform: translateX(5px);
+  background: rgba(135, 206, 235, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 119, 182, 0.15);
+}
+
+.news-container li strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #023e8a;
+}
+
+.news-container li p {
+  margin: 0.5rem 0;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.news-container li small {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+/* Race Result */
+.race-result {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 119, 182, 0.15);
+  border: 1px solid rgba(135, 206, 235, 0.3);
+}
+
+.race-result h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #0077b6;
+}
+
+.race-result pre {
+  background: rgba(0, 119, 182, 0.05);
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  max-height: 400px;
+  overflow-y: auto;
+  color: #1a1a1a;
+  border: 1px solid rgba(135, 206, 235, 0.3);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  margin-top: 2rem;
+  border: 1px solid rgba(135, 206, 235, 0.3);
+}
+
+.footer p {
+  margin: 0;
+  font-size: 1rem;
+  color: #1a1a1a;
 }
