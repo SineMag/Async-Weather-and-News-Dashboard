@@ -103,21 +103,21 @@ function App() {
 
   return (
     <div className="App">
-      <h1>🌦️ Async Weather & News Dashboard</h1>
+      <h1>Async Weather & News Dashboard</h1>
       <p className="subtitle">Demonstrating Callbacks, Promises, and Async/Await</p>
 
       <div className="controls">
         <h3>Select Async Pattern:</h3>
         
         <div className="button-group">
-          <h4>📞 Callbacks</h4>
+          <h4>Callbacks</h4>
           <button onClick={() => fetchData('callback')} disabled={loading}>
             Callback Version
           </button>
         </div>
 
         <div className="button-group">
-          <h4>🔗 Promises</h4>
+          <h4>Promises</h4>
           <button onClick={() => fetchData('promiseChain')} disabled={loading}>
             Promise Chain
           </button>
@@ -130,7 +130,7 @@ function App() {
         </div>
 
         <div className="button-group">
-          <h4>⚡ Async/Await</h4>
+          <h4>Async/Await</h4>
           <button onClick={() => fetchData('asyncSequential')} disabled={loading}>
             Sequential
           </button>
@@ -145,20 +145,20 @@ function App() {
 
       <div className="status">
         <p><strong>Current Pattern:</strong> {version}</p>
-        {loading && <p className="loading">⏳ Loading...</p>}
-        {error && <p className="error">❌ Error: {error}</p>}
+        {loading && <p className="loading">Loading...</p>}
+        {error && <p className="error">Error: {error}</p>}
       </div>
 
       {raceResult ? (
         <div className="race-result">
-          <h2>🏁 Race Result</h2>
+          <h2>Race Result</h2>
           <p><strong>Winner:</strong> {raceResult.type}</p>
           <pre>{JSON.stringify(raceResult.data, null, 2)}</pre>
         </div>
       ) : (
         <div className="data-container">
           <div className="weather-container">
-            <h2>🌡️ Weather</h2>
+            <h2>Weather</h2>
             {weather ? (
               <div>
                 <p><strong>Temperature:</strong> {weather.current_weather.temperature}°C</p>
@@ -172,14 +172,14 @@ function App() {
           </div>
 
           <div className="news-container">
-            <h2>📰 News Headlines</h2>
+            <h2>News Headlines</h2>
             {news ? (
               <ul>
                 {news.posts.slice(0, 5).map((post: any) => (
                   <li key={post.id}>
                     <strong>{post.title}</strong>
                     <p>{post.body.substring(0, 100)}...</p>
-                    <small>👍 {post.reactions.likes} | 👎 {post.reactions.dislikes}</small>
+                    <small>Likes: {post.reactions.likes} | Dislikes: {post.reactions.dislikes}</small>
                   </li>
                 ))}
               </ul>
@@ -191,7 +191,7 @@ function App() {
       )}
 
       <div className="footer">
-        <p>💡 <strong>Tip:</strong> Open your browser console to see detailed logs of each async pattern!</p>
+        <p><strong>Tip:</strong> Open your browser console to see detailed logs of each async pattern!</p>
       </div>
     </div>
   );

@@ -9,28 +9,28 @@
 html, body, #root {
   height: 100%;
   width: 100%;
-  background: linear-gradient(135deg, #e0f7ff 0%, #ffffff 50%, #87ceeb 100%);
+  background: #87ceeb;
 }
 
 .App {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  color: #1a1a1a;
+  color: #001f3f;
 }
 
 .App h1 {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
-  color: #0077b6;
+  color: #001845;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .subtitle {
   text-align: center;
   font-size: 1.1rem;
-  color: #555;
+  color: #003366;
   margin-bottom: 2rem;
 }
 
@@ -49,7 +49,7 @@ html, body, #root {
   margin-bottom: 1.5rem;
   text-align: center;
   font-size: 1.3rem;
-  color: #0077b6;
+  color: #001845;
 }
 
 .button-group {
@@ -62,16 +62,16 @@ html, body, #root {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #023e8a;
+  color: #002855;
 }
 
 .button-group button {
   margin: 0.5rem 0.5rem 0.5rem 0;
   padding: 0.8rem 1.5rem;
   background: #ffffff;
-  border: 2px solid #87ceeb;
+  border: 2px solid #003366;
   border-radius: 8px;
-  color: #0077b6;
+  color: #003366;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -79,10 +79,10 @@ html, body, #root {
 }
 
 .button-group button:hover:not(:disabled) {
-  background: #87ceeb;
+  background: #003366;
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 119, 182, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 51, 102, 0.4);
 }
 
 .button-group button:disabled {
@@ -103,11 +103,11 @@ html, body, #root {
 .status p {
   margin: 0.5rem 0;
   font-size: 1.1rem;
-  color: #1a1a1a;
+  color: #001f3f;
 }
 
 .loading {
-  color: #0077b6;
+  color: #003366;
   font-weight: bold;
   animation: pulse 1.5s infinite;
 }
@@ -150,20 +150,20 @@ html, body, #root {
 .news-container h2 {
   margin-bottom: 1rem;
   font-size: 1.5rem;
-  border-bottom: 2px solid #87ceeb;
+  border-bottom: 2px solid #003366;
   padding-bottom: 0.5rem;
-  color: #0077b6;
+  color: #001845;
 }
 
 .weather-container p,
 .news-container p {
   margin: 0.8rem 0;
   line-height: 1.6;
-  color: #1a1a1a;
+  color: #001f3f;
 }
 
 .placeholder {
-  color: #666;
+  color: #003366;
   font-style: italic;
 }
 
@@ -173,35 +173,35 @@ html, body, #root {
 }
 
 .news-container li {
-  background: rgba(135, 206, 235, 0.1);
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 8px;
   padding: 1rem;
   margin-bottom: 1rem;
   transition: transform 0.2s;
-  border: 1px solid rgba(135, 206, 235, 0.2);
+  border: 1px solid rgba(0, 51, 102, 0.3);
 }
 
 .news-container li:hover {
   transform: translateX(5px);
-  background: rgba(135, 206, 235, 0.2);
-  box-shadow: 0 2px 8px rgba(0, 119, 182, 0.15);
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 2px 8px rgba(0, 51, 102, 0.2);
 }
 
 .news-container li strong {
   display: block;
   margin-bottom: 0.5rem;
   font-size: 1.1rem;
-  color: #023e8a;
+  color: #002855;
 }
 
 .news-container li p {
   margin: 0.5rem 0;
-  color: #444;
+  color: #001f3f;
   font-size: 0.95rem;
 }
 
 .news-container li small {
-  color: #666;
+  color: #003366;
   font-size: 0.85rem;
 }
 
@@ -219,19 +219,19 @@ html, body, #root {
 .race-result h2 {
   margin-bottom: 1rem;
   text-align: center;
-  color: #0077b6;
+  color: #001845;
 }
 
 .race-result pre {
-  background: rgba(0, 119, 182, 0.05);
+  background: rgba(255, 255, 255, 0.3);
   padding: 1rem;
   border-radius: 8px;
   overflow-x: auto;
   font-size: 0.9rem;
   max-height: 400px;
   overflow-y: auto;
-  color: #1a1a1a;
-  border: 1px solid rgba(135, 206, 235, 0.3);
+  color: #001f3f;
+  border: 1px solid rgba(0, 51, 102, 0.3);
 }
 
 /* Footer */
@@ -247,5 +247,5 @@ html, body, #root {
 .footer p {
   margin: 0;
   font-size: 1rem;
-  color: #1a1a1a;
+  color: #001f3f;
 }
