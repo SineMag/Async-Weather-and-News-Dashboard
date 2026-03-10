@@ -1,3 +1,5 @@
+<img src="https://socialify.git.ci/SineMag/Async-Weather-and-News-Dashboard/image?language=1&owner=1&name=1&stargazers=1&theme=Light" alt="Async-Weather-and-News-Dashboard" width="640" height="320" />
+
 # 🌦️ Async Weather & News Dashboard
 
 A comprehensive educational project demonstrating different asynchronous programming patterns in JavaScript/TypeScript. This dashboard fetches weather data and news headlines using three different async approaches: **Callbacks**, **Promises**, and **Async/Await**.
